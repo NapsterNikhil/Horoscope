@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Nikhil_Horoscope">
+          <Key>
+            <PropertyRef Name="MyDate" />
+          </Key>
+          <Property Name="MyDate" Type="int" Nullable="false" />
+          <Property Name="aries" Type="varchar" MaxLength="1000" />
+          <Property Name="taurus" Type="varchar" MaxLength="1000" />
+          <Property Name="gemini" Type="varchar" MaxLength="1000" />
+          <Property Name="cancer" Type="varchar" MaxLength="1000" />
+          <Property Name="leo" Type="varchar" MaxLength="1000" />
+          <Property Name="virgo" Type="varchar" MaxLength="1000" />
+          <Property Name="libra" Type="varchar" MaxLength="1000" />
+          <Property Name="scorpio" Type="varchar" MaxLength="1000" />
+          <Property Name="saggitarius" Type="varchar" MaxLength="1000" />
+          <Property Name="capricorn" Type="varchar" MaxLength="1000" />
+          <Property Name="aquarius" Type="varchar" MaxLength="1000" />
+          <Property Name="pisces" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Nikhil_Username">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="dob" Type="int" />
+          <Property Name="mob" Type="int" />
+          <Property Name="yob" Type="int" />
+        </EntityType>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="Nikhil_Horoscope" EntityType="Self.Nikhil_Horoscope" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nikhil_Username" EntityType="Self.Nikhil_Username" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Nikhil_Horoscope">
+          <Key>
+            <PropertyRef Name="MyDate" />
+          </Key>
+          <Property Name="MyDate" Type="Int32" Nullable="false" />
+          <Property Name="aries" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="taurus" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="gemini" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="cancer" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="leo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="virgo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="libra" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="scorpio" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="saggitarius" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="capricorn" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="aquarius" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="pisces" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nikhil_Username">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dob" Type="Int32" />
+          <Property Name="mob" Type="Int32" />
+          <Property Name="yob" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="master" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Nikhil_Horoscope" EntityType="Self.Nikhil_Horoscope" />
+          <EntitySet Name="Nikhil_Username" EntityType="Self.Nikhil_Username" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="master">
+          <EntitySetMapping Name="Nikhil_Horoscope">
+            <EntityTypeMapping TypeName="masterModel.Nikhil_Horoscope">
+              <MappingFragment StoreEntitySet="Nikhil_Horoscope">
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="aries" ColumnName="aries" />
+                <ScalarProperty Name="taurus" ColumnName="taurus" />
+                <ScalarProperty Name="gemini" ColumnName="gemini" />
+                <ScalarProperty Name="cancer" ColumnName="cancer" />
+                <ScalarProperty Name="leo" ColumnName="leo" />
+                <ScalarProperty Name="virgo" ColumnName="virgo" />
+                <ScalarProperty Name="libra" ColumnName="libra" />
+                <ScalarProperty Name="scorpio" ColumnName="scorpio" />
+                <ScalarProperty Name="saggitarius" ColumnName="saggitarius" />
+                <ScalarProperty Name="capricorn" ColumnName="capricorn" />
+                <ScalarProperty Name="aquarius" ColumnName="aquarius" />
+                <ScalarProperty Name="pisces" ColumnName="pisces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nikhil_Username">
+            <EntityTypeMapping TypeName="masterModel.Nikhil_Username">
+              <MappingFragment StoreEntitySet="Nikhil_Username">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="yob" ColumnName="yob" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

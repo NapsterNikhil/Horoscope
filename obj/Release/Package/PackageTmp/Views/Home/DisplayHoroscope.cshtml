@@ -1,0 +1,40 @@
+﻿@model Horoscope.Models.HoroscopeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horoscope</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#151414; background-size:100%">
+   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <center><img id="icon" src="" /></center>
+                <div class="row">
+                    <div class="col-md-6">
+                        <textarea id="TextArea1" rows="2" cols="20" style="color:#9516B0;background-color:black;margin: 0px; width: 450px; height: 475px;font-family:'Comic Sans MS'; font-style:italic;font-size:17pt;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        document.getElementById("TextArea1").innerHTML = 'Hey @TempData["name"],\n\n     @TempData["print"]';
+        document.getElementsByTagName('body')[0].style.backgroundImage = 'url("../../Background/@TempData["sign"]\.jpg")';
+        document.getElementById("icon").src = '../../Zodiac/@TempData["sign"]\.png';
+    </script>
+</body>
+</html>
